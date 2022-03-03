@@ -17,7 +17,7 @@
             width: 50%;
             height: 898px;
             border-radius: 20px;
-            color: orange;
+            color: deepskyblue;
             font-size: 20px;
         }
     </style>
@@ -27,7 +27,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8">
-            <h1 style="color: orange; font-size: 40px; padding-top: 20px; padding-left: 40px;"><strong>MyAfya</strong></h1>
+            <h1 style="color: deepskyblue; font-size: 40px; padding-top: 20px; padding-left: 40px;"><strong>MyAfya</strong></h1>
         </div>
         <div class="col-md-4" style="width: 0%;padding-left: 400px;">
             <x-app-layout>
@@ -43,18 +43,17 @@
             <div class="sidebar">
                 <img src="images/LogoSample_ByTailorBrands.jpg" alt="" height="150px" width="150px" style="margin-left: 60px;">
                 <h2 style="padding-top: 80px;padding-left: 50px;"><i class="bi bi-house-door"></i> <a href="home">Home</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('myhealth')}}">General Health</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('medical_history')}}">Medical History</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive_condition')}}">Sensitive conditions</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('book_appointments')}}">Book Appointments</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-question-square"></i> <a href="{{url('ask_doctor')}}">Ask a Doctor</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-chat-square-text"></i> <a href="{{url('comments')}}">Live Comments</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('general_health')}}">Patient's General Health</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="">Treat Patient</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="">Patient's Sensitive Conditions</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="">Appointments</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-chat-square-text"></i> <a href="">Comment</a></h2>
 
             </div>
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Comments</strong></h1>
+                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Welcome!</strong></h1>
             </section>
 
         </div>
@@ -66,7 +65,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
-
 
 
 

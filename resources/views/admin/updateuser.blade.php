@@ -20,23 +20,23 @@
 
     @endif
 
-        <form action="{{url('edituser', $patient->id)}}" method="post">
+        <form action="{{url('edituser', $user->id)}}" method="post">
             @csrf
             <div>
                 <label for="name">name</label>
-                <input type="text" name="name" value="{{$patient->name}}">
+                <input type="text" name="name" value="{{$user->name}}">
             </div>
             <div>
                 <label for="email">email</label>
-                <input type="email" name="email" value="{{$patient->email}}">
+                <input type="email" name="email" value="{{$user->email}}">
             </div>
             <div>
                 <label for="phone">phone</label>
-                <input type="text" name="phone" value="{{$patient->phone}}">
+                <input type="text" name="phone" value="{{$user->phone}}">
             </div>
             <div>
                 <label for="address">address</label>
-                <input type="text" name="address" value="{{$patient->address}}">
+                <input type="text" name="address" value="{{$user->address}}">
             </div>
 
             <div>

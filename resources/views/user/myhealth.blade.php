@@ -20,6 +20,13 @@
             color: orange;
             font-size: 20px;
         }
+        td{
+            padding: 30px;
+        }
+        th{
+            padding-left: 30px;
+            font-size: 20px;
+        }
     </style>
     <title>Home</title>
 </head>
@@ -54,7 +61,35 @@
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Comments</strong></h1>
+                <div>
+                    <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>General Health Details.</strong></h1>
+                </div>
+
+                <div style="color: white; padding-top: 50px;">
+                    <table>
+                        <tr>
+                            <th>Blood Group</th>
+                            <th>Blood Pressure</th>
+                            <th>Blood Sugar</th>
+                            <th>Eye Condition</th>
+                            <th>Heart Condition</th>
+                            <th>Cancer Tests</th>
+                            <th>Other</th>
+                        </tr>
+                        @foreach($myhealth as $health)
+                        <tr>
+                            <td>{{$health->bloodgroup}}</td>
+                            <td>{{$health->bloodpressure}}</td>
+                            <td>{{$health->bloodsugar}}</td>
+                            <td>{{$health->eyecondition}}</td>
+                            <td>{{$health->heartcondition}}</td>
+                            <td>{{$health->cancer}}</td>
+                            <td>{{$health->other}}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+
             </section>
 
         </div>
