@@ -32,7 +32,7 @@
             color: black;
         }
     </style>
-    <title>Home</title>
+    <title>Treatment</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -56,7 +56,7 @@
                 <h2 style="padding-top: 80px;padding-left: 50px;"><i class="bi bi-house-door"></i> <a href="home">Home</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('general_health')}}">Patient's General Health</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('treatment')}}">Treat Patient</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive')}}">Patient's Sensitive Conditions</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="">Patient's Sensitive Conditions</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="">Appointments</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-chat-square-text"></i> <a href="">Comment</a></h2>
 
@@ -64,49 +64,45 @@
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white"><h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Patient's General Health</strong></h1></h1>
+                <h1 style="color: white"><h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Patient's Diagnosis & Treatment</strong></h1></h1>
 
-                <form action="{{url('health')}}" method="post">
+                <form action="{{url('patient_treatment')}}" method="post">
                     @csrf
                     <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="hname">Hospital Name</label>
+                        <input type="text" name="hname" placeholder="Hospital Name">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="dname">Doctor Name</label>
+                        <input type="text" name="dname" placeholder="Doctor's Name">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="phone">Doctor Phone No.</label>
+                        <input type="text" name="phone" placeholder="Doctor's Phone Number">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
                         <label for="email">Patient's Email</label>
-                        <input type="email" name="email" placeholder="Enter Patient's Email">
+                        <input type="email" name="email" placeholder="Patient's Email">
                     </div>
 
                     <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="bloodgroup">Blood Group</label>
-                        <input type="text" name="bloodgroup" placeholder="Enter Patient's Blood Group">
+                        <label for="condition">Patient Condition</label>
+                        <input type="text" name="condition" placeholder="Patient's Condition">
                     </div>
 
                     <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="bloodpressure">Blood Pressure</label>
-                        <input type="text" name="bloodpressure" placeholder="Enter Patient's Blood Pressure">
+                        <label for="diagnosis">Diagnosis</label>
+                        <input type="text" name="diagnosis" placeholder="Diagnosis">
                     </div>
 
                     <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="bloodsugar">Blood Sugar</label>
-                        <input type="text" name="bloodsugar" placeholder="Enter Patient's Blood Sugar">
+                        <label for="treatment">Treatment</label>
+                        <input type="text" name="treatment" placeholder="Treatment">
                     </div>
 
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="eyecondition">Eye Condition</label>
-                        <input type="text" name="eyecondition" placeholder="Enter Patient's Eye Condition">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="heartcondition">Heart Condition</label>
-                        <input type="text" name="heartcondition" placeholder="Enter Patient's Heart Condition">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="cancer">Cancer Tests</label>
-                        <input type="text" name="cancer" placeholder="Enter Patient's Cancer Tests">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="other">Other</label>
-                        <input type="text" name="other" placeholder="Enter Patient's Other Conditions">
-                    </div>
 
                     <div style="color: white; padding-top: 30px; padding-left: 150px;">
                         <input type="submit" class="btn btn-primary">

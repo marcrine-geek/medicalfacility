@@ -63,6 +63,14 @@ Route::get('/general_health', [DoctorController::class, 'general_health']);
 
 Route::post('/health', [DoctorController::class, 'health']);
 
+Route::get('/treatment', [DoctorController::class, 'treatment']);
+
+Route::post('/patient_treatment', [DoctorController::class, 'patient_treatment']);
+
+Route::get('/sensitive', [DoctorController::class, 'sensitive']);
+
+Route::post('/condition', [DoctorController::class, 'condition']);
+
 
 
 

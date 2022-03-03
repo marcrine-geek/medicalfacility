@@ -8,7 +8,9 @@ use App\Models\Appointment;
 
 use App\Models\Health;
 
-use App\Models\User;
+use App\Models\Treatment;
+
+use App\Models\Condition;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -30,11 +32,28 @@ class PatientController extends Controller
     }
 
     public function medical_history(){
-        return view('user.medical_history');
+        if (Auth::id()){
+            $useremail=Auth::user()->email;
+
+            $medical_history=treatment::where('email', $useremail)->get();
+
+            return view('user.medical_history', compact('medical_history'));
+        }else{
+            return view('login');
+        }
+
     }
 
     public function sensitive_condition(){
-        return view('user.sensitive_condition');
+        if (Auth::id()){
+            $useremail=Auth::user()->email;
+
+            $mycondition=condition::where('email', $useremail)->get();
+
+            return view('user.sensitive_condition', compact('mycondition'));
+        }else{
+            return view('login');
+        }
     }
 
     public function book_appointments(){

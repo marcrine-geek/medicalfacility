@@ -66,21 +66,22 @@
                     <tr>
                         <th>Hospital Name</th>
                         <th>Doctor Name</th>
-                        <th>Patient Name</th>
+                        <th>Doctor Phone</th>
                         <th>Patient Condition</th>
                         <th>Diagnosis</th>
                         <th>Treatment</th>
-                        <th>Date</th>
                     </tr>
+                    @foreach($medical_history as $history)
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$history->hname}}</td>
+                        <td>{{$history->dname}}</td>
+                        <td>{{$history->phone}}</td>
+                        <td>{{$history->condition}}</td>
+                        <td>{{$history->diagnosis}}</td>
+                        <td>{{$history->treatment}}</td>
                         <td></td>
                     </tr>
+                    @endforeach
                 </table>
             </div>
 

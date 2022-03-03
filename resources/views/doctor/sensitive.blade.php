@@ -20,8 +20,19 @@
             color: deepskyblue;
             font-size: 20px;
         }
+        label{
+            display: inline-block;
+            width: 150px;
+            font-size: 20px;
+        }
+        input[type = text], input[type=email]{
+            border: 2px solid #9ca3af;
+            border-radius: 5px;
+            width: 300px;
+            color: black;
+        }
     </style>
-    <title>Home</title>
+    <title>Sensitive Condition</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -53,7 +64,46 @@
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Welcome!</strong></h1>
+                <h1 style="color: white"><h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Patient's Sensitive Condition</strong></h1></h1>
+
+                <form action="{{url('condition')}}" method="post">
+                    @csrf
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="hname">Hospital Name</label>
+                        <input type="text" name="hname" placeholder="Hospital Name">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="dname">Doctor Name</label>
+                        <input type="text" name="dname" placeholder="Doctor's Name">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="phone">Doctor Phone No.</label>
+                        <input type="text" name="phone" placeholder="Doctor's Phone Number">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="email">Patient's Email</label>
+                        <input type="email" name="email" placeholder="Patient's Email">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="condition">Patient Condition</label>
+                        <input type="text" name="condition" placeholder="Patient's Condition">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <label for="details">Details</label>
+                        <input type="text" name="details" placeholder="Details">
+                    </div>
+
+                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+
+                </form>
+
             </section>
 
         </div>
@@ -65,6 +115,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
 
 
 

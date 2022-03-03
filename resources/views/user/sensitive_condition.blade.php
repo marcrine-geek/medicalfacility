@@ -68,21 +68,16 @@
             <div style="color: white;">
                 <table>
                     <tr>
-                        <th>Conditions</th>
+                        <th>Condition</th>
                         <th>Details</th>
                     </tr>
+                    @foreach($mycondition as $condition)
                     <tr>
-                        <td>Condition 1</td>
+                        <td>{{$condition->condition}}</td>
+                        <td>{{$condition->details}}</td>
                     </tr>
-                    <tr>
-                        <td>Condition 2</td>
-                    </tr>
-                    <tr>
-                        <td>Condition 3</td>
-                    </tr>
-                    <tr>
-                        <td>Other</td>
-                    </tr>
+                    @endforeach
+
                 </table>
             </div>
 
