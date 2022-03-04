@@ -71,6 +71,16 @@ Route::get('/sensitive', [DoctorController::class, 'sensitive']);
 
 Route::post('/condition', [DoctorController::class, 'condition']);
 
+Route::get('/appoint', [DoctorController::class, 'appoint']);
+
+Route::get('/approve/{id}', [DoctorController::class, 'approve']);
+
+Route::get('/cancel/{id}', [DoctorController::class, 'cancel']);
+
+//Route::get('/sendmail/{id}', [DoctorController::class, 'sendmail']);
+//
+//Route::get('/emailview/{id}', [DoctorController::class, 'emailview']);
+
 
 
 

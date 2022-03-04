@@ -78,6 +78,7 @@ class PatientController extends Controller
         $data->doctorname=$request->doctorname;
         $data->date=$request->date;
         $data->message=$request->message;
+        $data->status='In Progress';
 
         $data->save();
 

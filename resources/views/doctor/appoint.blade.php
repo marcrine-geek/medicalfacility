@@ -20,25 +20,18 @@
             color: deepskyblue;
             font-size: 20px;
         }
-        label{
-            display: inline-block;
-            width: 150px;
+        th{
+            padding-left: 30px;
             font-size: 20px;
         }
-        input[type = text], input[type=email]{
-            border: 2px solid #9ca3af;
-            border-radius: 5px;
-            width: 300px;
-            color: black;
-        }
     </style>
-    <title>Sensitive Condition</title>
+    <title>Home</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8">
-            <h1 style="color: deepskyblue; font-size: 40px; padding-top: 20px; padding-left: 40px;"><strong>MyAfya</strong></h1>
+            <h1 style="color: orange; font-size: 40px; padding-top: 20px; padding-left: 40px;"><strong>MyAfya</strong></h1>
         </div>
         <div class="col-md-4" style="width: 0%;padding-left: 400px;">
             <x-app-layout>
@@ -64,47 +57,34 @@
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white"><h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Patient's Sensitive Condition</strong></h1></h1>
-
-                <form action="{{url('condition')}}" method="post">
-                    @csrf
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="hname">Hospital Name</label>
-                        <input type="text" name="hname" placeholder="Hospital Name">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="dname">Doctor Name</label>
-                        <input type="text" name="dname" placeholder="Doctor's Name">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="phone">Doctor Phone No.</label>
-                        <input type="text" name="phone" placeholder="Doctor's Phone Number">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="email">Patient's Email</label>
-                        <input type="email" name="email" placeholder="Patient's Email">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="condition">Patient Condition</label>
-                        <input type="text" name="condition" placeholder="Patient's Condition">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <label for="details">Details</label>
-                        <input type="text" name="details" placeholder="Details">
-                    </div>
-
-                    <div style="color: white; padding-top: 30px; padding-left: 150px;">
-                        <input type="submit" class="btn btn-primary">
-                    </div>
-
-                </form>
-
+                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Appointments</strong></h1>
             </section>
+
+            <div style="color: white; padding-top: 50px;">
+                <table>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Patient Email</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Approve</th>
+                        <th>Cancel</th>
+{{--                        <th>Send Mail</th>--}}
+                    </tr>
+                    @foreach($docappoint as $appoint)
+                    <tr>
+                        <td style="padding-left: 30px;">{{$appoint->fname}}</td>
+                        <td style="padding-left: 30px;">{{$appoint->email}}</td>
+                        <td style="padding-left: 30px;">{{$appoint->message}}</td>
+                        <td style="padding-left: 30px;">{{$appoint->date}}</td>
+                        <td style="padding-left: 30px;"><a class="btn btn-success" href="{{url('approve', $appoint->id)}}">Approve</a></td>
+                        <td style="padding-left: 30px;"><a class="btn btn-danger" href="{{url('cancel', $appoint->id)}}">Cancel</a></td>
+{{--                        <td style="padding-left: 30px;"><a class="btn btn-primary" href="{{url('emailview', $appoint->id)}}">Send Mail</a></td>--}}
+                    </tr>
+                    @endforeach
+
+                </table>
+            </div>
 
         </div>
     </div>

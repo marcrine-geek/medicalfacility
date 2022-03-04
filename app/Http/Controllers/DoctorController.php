@@ -10,6 +10,11 @@ use App\Models\Treatment;
 
 use App\Models\Condition;
 
+use App\Models\Appointment;
+
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Auth;
+
 class DoctorController extends Controller
 {
     public function general_health(){
@@ -75,6 +80,62 @@ class DoctorController extends Controller
         return redirect()->back();
 
     }
+
+    public function appoint(){
+        if (Auth::id()){
+            if (Auth::user()->typeofuser=='doctor'){
+                $doctorname=Auth::user()->name;
+
+                $docappoint=appointment::where('doctorname', $doctorname)->get();
+
+                return view('doctor.appoint', compact('docappoint'));
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return view('login');
+        }
+
+    }
+
+    public function approve($id){
+        $data=appointment::find($id);
+
+        $data->status='Approved';
+
+        $data->save();
+
+        return redirect()->back();
+    }
+    public function cancel($id){
+        $data=appointment::find($id);
+
+        $data->status='Cancelled';
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+//    public function emailview($id){
+//        $data=appointment::find($id);
+//
+//        return view('doctor.email_view', compact('data'));
+//    }
+//    public function sendmail(Request $request, $id){
+//
+//        $data=appointment::find($id);
+//
+//        $details = [
+//            'greeting' => $request->greeting,
+//            'body' => $request->body,
+//            'endpart' => $request->endpart
+//        ];
+//        Notification::send($data, new SendNotification($details));
+//
+//        return redirect()->back();
+//
+//    }
 }
 
 
