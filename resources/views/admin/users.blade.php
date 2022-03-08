@@ -20,21 +20,12 @@
             color: white;
             font-size: 20px;
         }
-        label{
-            display: inline-block;
-            width: 150px;
-            font-size: 20px;
-            padding-top: 20px;
-        }
-        input[type = text], input[type=email]{
-            border: 2px solid #9ca3af;
-            border-radius: 5px;
-            width: 300px;
-            color: black;
-
+        th{
+            padding-left: 30px;
+            font-size: 30px;
         }
     </style>
-    <title>Home</title>
+    <title>Users</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -54,45 +45,39 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="sidebar">
-                <img src="public/images/LogoSample_ByTailorBrands.jpg" alt="" height="150px" width="150px" style="margin-left: 60px;">
+                <img src="images/LogoSample_ByTailorBrands.jpg" alt="qwerty" height="150px" width="150px" style="margin-left: 60px;">
                 <h2 style="padding-top: 80px;padding-left: 50px;"><i class="bi bi-house-door"></i> <a href="home">Home</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('doctors')}}">All Users</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('add_doctor')}}">Add User</a></h2>
+
+
+
             </div>
         </div>
         <div class="col-lg-8">
-            <section id="home" style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;">
-                Edit User Details
+            <section id="home">
+                <h1 style="color: white; font-size: 50px; padding-left: 50px; padding-top: 30px;">All users in the system</h1>
+                <table style="color: white; padding-top: 30px;">
+                    <tr style="padding-left: 20px;">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    @foreach($data ?? '' as $doc)
+                        <tr style="color: white;padding-left: 20px;">
+                            <td style="padding-left: 20px;font-size: 25px;">{{$doc->name}}</td>
+                            <td style="padding-left: 20px; font-size: 25px;">{{$doc->email}}</td>
+                            <td style="padding-left: 20px; font-size: 25px;">{{$doc->phone}}</td>
+                            <td style="padding-left: 20px; font-size: 25px;">{{$doc->address}}</td>
+                            <td style="padding-left: 20px; font-size: 25px;"><a class="btn btn-primary" href="{{url('updateuser', $doc->id)}}">Edit</a></td>
+                            <td style="padding-left: 20px; font-size: 25px;"><a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('delete', $doc->id)}}">Delete</a></td>
+                        </tr>
+                    @endforeach
+                </table>
             </section>
-            <div>
-
-                <form action="{{url('edituser', $user->id)}}" method="post">
-                    @csrf
-                    <div>
-                        <label for="name">name</label>
-                        <input type="text" name="name" value="{{$user->name}}">
-                    </div>
-                    <div>
-                        <label for="email">email</label>
-                        <input type="email" name="email" value="{{$user->email}}">
-                    </div>
-                    <div>
-                        <label for="phone">phone</label>
-                        <input type="text" name="phone" value="{{$user->phone}}">
-                    </div>
-                    <div>
-                        <label for="address">address</label>
-                        <input type="text" name="address" value="{{$user->address}}">
-                    </div>
-
-                    <div>
-                        <input type="submit" class="btn btn-primary" value="Update">
-                    </div>
-
-                </form>
-            </div>
-
-
 
         </div>
     </div>
@@ -103,6 +88,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
-
 
 

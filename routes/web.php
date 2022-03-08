@@ -23,6 +23,8 @@ use App\Http\Controllers\DoctorController;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/welcome', [HomeController::class, 'welcome']);
+
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth', 'verified');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -37,7 +39,7 @@ Route::get('/hospitals', [HomeController::class, 'hospitals']);
 
 Route::get('contacts', [HomeController::class, 'contacts']);
 
-Route::get('/patients', [AdminController::class, 'patients']);
+Route::get('/users', [AdminController::class, 'users']);
 
 Route::get('/updateuser/{id}', [AdminController::class, 'updateuser']);
 
@@ -77,6 +79,11 @@ Route::get('/approve/{id}', [DoctorController::class, 'approve']);
 
 Route::get('/cancel/{id}', [DoctorController::class, 'cancel']);
 
+Route::get('/add_doctor', [AdminController::class, 'add_doctor']);
+
+Route::post('/contactus', [HomeController::class, 'contactus']);
+
+Route::post('/add_doc', [AdminController::class, 'add_doc']);
 //Route::get('/sendmail/{id}', [DoctorController::class, 'sendmail']);
 //
 //Route::get('/emailview/{id}', [DoctorController::class, 'emailview']);

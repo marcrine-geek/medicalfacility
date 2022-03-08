@@ -29,9 +29,7 @@
                 <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="#home"><strong>HOME</strong></a></li>
                 <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="{{url('about')}}"><strong>ABOUT US</strong></a></li>
                 <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="{{url('doctors')}}"><strong>DOCTORS</strong></a></li>
-                <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="{{url('hospitals')}}"><strong>HOSPITALS</strong></a></li>
-                <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="{{url('contacts')}}"><strong>CONTACT</strong></a></li>
-                <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href=""><strong>SERVICES</strong></a></li>
+                <li style="display: inline; margin: 10px;"><a style="text-decoration: none; color: white; font-size: 20px;" href="{{url('contacts')}}"><strong>CONTACT US</strong></a></li>
             </ul>
         </div>
         <div style="padding-right: 20px;">
@@ -50,18 +48,16 @@
             <img src="images/LogoSample_ByTailorBrands.jpg" alt="" style="padding-left: 36%;">
 
             <h1 align="center">Mission</h1>
-            <p style="text-align: center;">Lorem ipsum dolor sit expedita fugiat Lorem ipsum dolor sit expedita fugiat.</p>
+            <p style="text-align: center;">To provide patient-centered healthcare with excellence in quality, service, and access.</p>
             <h1 align="center">Core Values</h1>
-            <p style="text-align: center;">Lorem ipsum dolor sit expedita fugiat .</p>
+            <p style="text-align: center;">The patient always comes first. </p>
             <h1 align="center">Goal</h1>
-            <p style="text-align: center;">Lorem ipsum dolor sit expedita fugiat .</p>
+            <p style="text-align: center;">protect and improve the health of individuals and populations.</p>
         </div>
     </div>
 </div>
 </section>
 {{--End of home page section--}}
-
-
 
 
 

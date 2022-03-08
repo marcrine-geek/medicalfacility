@@ -48,13 +48,12 @@
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive_condition')}}">Sensitive conditions</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('book_appointments')}}">Book Appointments</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-question-square"></i> <a href="{{url('ask_doctor')}}">Ask a Doctor</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-chat-square-text"></i> <a href="{{url('comments')}}">Live Comments</a></h2>
 
             </div>
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Welcome!</strong></h1>
+                <h1 style="color: white; padding-top: 250px; font-size: 50px; padding-left: 100px;"><strong>Welcome To Your Dashboard!</strong></h1>
             </section>
 
         </div>

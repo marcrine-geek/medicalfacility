@@ -58,7 +58,6 @@
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('treatment')}}">Treat Patient</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive')}}">Patient's Sensitive Conditions</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('appoint')}}">Appointments</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-chat-square-text"></i> <a href="">Comment</a></h2>
 
             </div>
         </div>

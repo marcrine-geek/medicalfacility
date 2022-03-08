@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
+use App\Models\Contact;
+
+use App\Models\Doctor;
+
 class HomeController extends Controller
 {
 
@@ -27,6 +31,10 @@ class HomeController extends Controller
         }
     }
 
+    public function welcome(){
+        return view('welcome');
+    }
+
     public function index(){
 //        if (Auth::id()){
 //            return redirect('home');
@@ -41,7 +49,9 @@ class HomeController extends Controller
     }
 
     public function doctors(){
-        return view('doctors');
+        $data=doctor::all();
+
+        return view('doctors', compact('data'));
     }
 
     public function hospitals(){
@@ -51,4 +61,38 @@ class HomeController extends Controller
     public function contacts(){
         return view('contacts');
     }
+
+    public function contactus(Request $request){
+        $data=new contact;
+
+        $data->fname=$request->fname;
+        $data->lname=$request->lname;
+        $data->email=$request->email;
+        $data->message=$request->message;
+
+        $data->save();
+
+        return view('contacts');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

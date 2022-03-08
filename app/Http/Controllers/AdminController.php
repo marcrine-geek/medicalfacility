@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function patients(){
-        $data=user::all();
+    public function users(){
+        if (Auth::id()){
+            $data=user::all();
 
-        return view('admin.patients', compact('data'));
+            return view('admin.users', compact('data'));
+
+        }else{
+            return view('login');
+        }
+
+
     }
 
     public function updateuser($id){
@@ -22,6 +31,7 @@ class AdminController extends Controller
 
     public function edituser(Request $request, $id){
 
+
         $user=user::find($id);
 
         $user->name=$request->name;
@@ -31,7 +41,7 @@ class AdminController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('message', 'updated successfully');
+        return redirect()->back();
     }
 
     public function delete($id){
@@ -42,4 +52,43 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+    public function add_doctor(){
+        return view('admin.add_doctor');
+    }
+
+    public function add_doc(Request $request){
+        $doctor=new doctor;
+
+        $image=$request->file;
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+        $request->file->move('doctorimage', $imagename);
+        $doctor->image=$imagename;
+
+        $doctor->name=$request->name;
+        $doctor->email=$request->email;
+        $doctor->phone=$request->number;
+        $doctor->speciality=$request->speciality;
+
+        $doctor->save();
+
+        return redirect()->back();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
