@@ -58,6 +58,7 @@
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('medical_history')}}">Medical History</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive_condition')}}">Sensitive conditions</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('book_appointments')}}">Book Appointments</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('my_appointments')}}">My Appointments</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-question-square"></i> <a href="{{url('ask_doctor')}}">Ask a Doctor</a></h2>
 
             </div>
@@ -68,7 +69,7 @@
             </section>
 
             <div style="color: white;">
-                <form action="" method="post">
+                <form action="{{url('questions')}}" method="post">
                     @csrf
                     <div style="color: white; padding-top: 50px; padding-left: 150px;">
                         <label for="fname">First Name</label>
@@ -91,13 +92,18 @@
                     </div>
 
                     <div style="color: white; padding-top: 50px; padding-left: 150px;">
+                        <label for="docemail">Doctor Email</label>
+                        <input type="email" name="docemail" placeholder="Doctor Email">
+                    </div>
+
+                    <div style="color: white; padding-top: 50px; padding-left: 150px;">
                         <label for="date">Date</label>
                         <input type="date" name="date" style="color: #1a202c;">
                     </div>
 
                     <div style="color: white; padding-top: 50px; padding-left: 150px;">
                         <label for="message">Question</label>
-                        <textarea name="message" id="message" cols="30" rows="5" style="border: 2px solid #9ca3af; border-radius: 5px; color: black;"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="3" style="border: 2px solid #9ca3af; border-radius: 5px; color: black;"></textarea>
                     </div>
 
                     <div style="color: white; padding-top: 50px; padding-left: 150px;">

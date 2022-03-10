@@ -20,15 +20,12 @@
             color: orange;
             font-size: 20px;
         }
-        td{
-            padding: 30px;
-        }
         th{
             padding-left: 30px;
             font-size: 20px;
         }
     </style>
-    <title>General Health</title>
+    <title>My Appointments</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -61,36 +58,29 @@
         </div>
         <div class="col-lg-8">
             <section id="home">
-                <div>
-                    <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>General Health Details.</strong></h1>
-                </div>
-
-                <div style="color: white; padding-top: 50px;">
-                    <table>
-                        <tr>
-                            <th>Blood Group</th>
-                            <th>Blood Pressure</th>
-                            <th>Blood Sugar</th>
-                            <th>Eye Condition</th>
-                            <th>Heart Condition</th>
-                            <th>Cancer Tests</th>
-                            <th>Other</th>
-                        </tr>
-                        @foreach($myhealth as $health)
-                        <tr>
-                            <td>{{$health->bloodgroup}}</td>
-                            <td>{{$health->bloodpressure}}</td>
-                            <td>{{$health->bloodsugar}}</td>
-                            <td>{{$health->eyecondition}}</td>
-                            <td>{{$health->heartcondition}}</td>
-                            <td>{{$health->cancer}}</td>
-                            <td>{{$health->other}}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </div>
-
+                <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>My Appointments</strong></h1>
             </section>
+
+            <div style="color: white; padding-top: 50px;">
+                <table>
+                    <tr>
+                        <th>Email</th>
+                        <th>Doctor Name</th>
+                        <th>Date</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                    </tr>
+                    @foreach($data as $myappoint)
+                        <tr>
+                            <td style="padding-left: 30px; font-size: 20px;">{{$myappoint->email}}</td>
+                            <td style="padding-left: 30px; font-size: 20px;">{{$myappoint->doctorname}}</td>
+                            <td style="padding-left: 30px; font-size: 20px;">{{$myappoint->date}}</td>
+                            <td style="padding-left: 30px; font-size: 20px;">{{$myappoint->message}}</td>
+                            <td style="padding-left: 30px; font-size: 20px;">{{$myappoint->status}}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
 
         </div>
     </div>
@@ -101,6 +91,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 

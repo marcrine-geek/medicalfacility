@@ -84,9 +84,10 @@ Route::get('/add_doctor', [AdminController::class, 'add_doctor']);
 Route::post('/contactus', [HomeController::class, 'contactus']);
 
 Route::post('/add_doc', [AdminController::class, 'add_doc']);
-//Route::get('/sendmail/{id}', [DoctorController::class, 'sendmail']);
-//
-//Route::get('/emailview/{id}', [DoctorController::class, 'emailview']);
+
+Route::get('/my_appointments',[PatientController::class, 'my_appointments']);
+
+Route::post('/questions', [PatientController::class, 'questions']);
 
 
 

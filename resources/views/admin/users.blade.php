@@ -48,7 +48,7 @@
                 <img src="images/LogoSample_ByTailorBrands.jpg" alt="qwerty" height="150px" width="150px" style="margin-left: 60px;">
                 <h2 style="padding-top: 80px;padding-left: 50px;"><i class="bi bi-house-door"></i> <a href="home">Home</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('doctors')}}">All Users</a></h2>
-                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('add_doctor')}}">Add User</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('add_doctor')}}">Add Doctor</a></h2>
 
 
 

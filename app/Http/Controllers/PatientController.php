@@ -12,6 +12,8 @@ use App\Models\Treatment;
 
 use App\Models\Condition;
 
+use App\Models\Question;
+
 use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
@@ -64,6 +66,21 @@ class PatientController extends Controller
         return view('user.ask_doctor');
     }
 
+    public function questions(Request $request){
+        $data=new question;
+
+        $data->fname=$request->fname;
+        $data->lname=$request->lname;
+        $data->email=$request->email;
+        $data->doctorname=$request->doctorname;
+        $data->docemail=$request->docemail;
+        $data->date=$request->date;
+        $data->message=$request->message;
+
+        $data->save();
+        return redirect()->back();
+    }
+
     public function comments(){
         return view('user.comments');
     }
@@ -82,7 +99,45 @@ class PatientController extends Controller
 
         $data->save();
 
-        return redirect()->back()->with('message', 'appointment request sent successfully');
+        return redirect()->back();
 
     }
+
+    public function my_appointments(){
+        if (Auth::id()){
+
+            $useremail=Auth::user()->email;
+
+            $data=appointment::where('email', $useremail)->get();
+
+            return view('user.my_appointments', compact('data'));
+
+        }else{
+            return view('login');
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

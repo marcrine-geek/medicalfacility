@@ -58,6 +58,7 @@
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('medical_history')}}">Medical History</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('sensitive_condition')}}">Sensitive conditions</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('book_appointments')}}">Book Appointments</a></h2>
+                <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-file-medical"></i> <a href="{{url('my_appointments')}}">My Appointments</a></h2>
                 <h2 style="padding-top: 20px;padding-left: 50px;"><i class="bi bi-question-square"></i> <a href="{{url('ask_doctor')}}">Ask a Doctor</a></h2>
 
             </div>
@@ -65,16 +66,7 @@
         <div class="col-lg-8">
             <section id="home">
                 <div>
-                    @if(session()->has('message'))
 
-                        <div class="alert alert-success">
-
-                            <button type="button" class="btn-close" aria-label="Close" data-dismiss="alert">X</button>
-                            {{session()->get('message')}}
-
-                        </div>
-
-                    @endif
                     <h1 style="color: white; padding-top: 30px; font-size: 50px; padding-left: 100px;"><strong>Make an Appointment</strong></h1>
                     <form action="{{url('appointment')}}" method="post">
                         @csrf
